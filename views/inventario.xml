@@ -6,33 +6,15 @@
         <field name="model">inventario.inventario</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
-            <tree string="Inventario Data">
-                <field name="inventario"/>
-                <field name="archivo"/>
-            </tree>
-
-            <form>
-              <field name="inventario">
+          <form>
+            <field name="inventario">
                 <tree>
-                  <field name="codigo"/>
-                  <field name="producto"/>
+                    <field name="codigo"></field>
+                    <field name="producto"></field>
+                    <field name="cantidad_tecnica"></field>
                 </tree>
-            </form>
-        </field>
-      </record>
-
-      <record model="ir.ui.view" id="view_id">
-        <field name="name">inventario.view</field>
-        <field name="model">inventario.inventario</field>
-        <field name="priority" eval="16" />
-        <field name="arch" type="xml">
-            <form>
-              <field name="inventario">
-                <tree>
-                  <field name="codigo"/>
-                  <field name="producto"/>
-                </tree>
-            </form>
+            </field>
+          </form>
         </field>
       </record>
 
