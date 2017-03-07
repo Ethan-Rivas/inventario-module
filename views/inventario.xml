@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <odoo>
+    <data>
+      <record model="ir.ui.view" id="view_id">
+        <field name="name">inventario.view</field>
+        <field name="model">inventario.inventario</field>
+        <field name="priority" eval="16" />
+        <field name="arch" type="xml">
+          <form>
+            <field name="inventario">
+                <tree>
+                    <field name="codigo"></field>
+                    <field name="producto"></field>
+                    <field name="cantidad_tecnica"></field>
+                </tree>
+            </field>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="inventario">
+        <field name="name">Inventario</field>
+        <field name="res_model">inventario.inventario</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+    </data>
+  </odoo>

@@ -1,0 +1,7 @@
+<odoo>
+  <data>
+    <menuitem name="Inventario" action="inventario" id="inventario_menu" sequence="450"/>
+    <menuitem name="Datos" id="inventario_submenu" parent="inventario_menu" sequence="10"/>
+    <menuitem name="Nuevo" id="nuevo_archivo" parent="inventario_submenu" sequence="5"/>
+  </data>
+</odoo>
