@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <odoo>
     <data>
+
       <record model="ir.ui.view" id="view_id">
         <field name="name">inventario.view</field>
         <field name="model">inventario.inventario</field>
         <field name="priority" eval="16" />
         <field name="arch" type="xml">
+          <tree>
+            <group>
+              <field name="name" string="Nombre"></field>
+            </group>
+            <group>
+              <field name="archivo" string="Archivo"></field>
+            </group>
+          </tree>
+
           <form>
             <field name="inventario">
                 <tree>
