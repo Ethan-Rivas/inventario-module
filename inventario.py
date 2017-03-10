@@ -11,6 +11,8 @@ class Inventario(models.Model):
     inventario = fields.One2many('linea.inventario', 'inventario')
     archivo = fields.Binary('Archivo')
 
+    partner = fields.One2many('res.partner', 'name')
+
     @api.model
     def create(self, vals):
         record = super(Inventario, self).create(vals)
