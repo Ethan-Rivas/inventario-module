@@ -14,6 +14,9 @@
             <group>
               <field name="archivo" string="Archivo"></field>
             </group>
+            <group>
+              <field name="partner" string="Partner"></field>
+            </group>
           </tree>
 
           <form>
@@ -22,6 +25,7 @@
                     <field name="codigo"></field>
                     <field name="producto"></field>
                     <field name="cantidad_tecnica"></field>
+                    <field name="cantidad_contada"></field>
                 </tree>
             </field>
           </form>
