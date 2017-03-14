@@ -10,31 +10,27 @@ class Inventario(http.Controller):
         partner = partners.search([('telegram_chat_id','=', telegram_chat_id)])
 
         inventarios = http.request.env['inventario.inventario']
-        inventario = inventarios.search([('partner', '=', partner.id)])
+        inventario_partner = inventarios.search([('partner', '=', partner.id)])
 
         linea_inventarios = http.request.env['linea.inventario']
-        linea_inventario = linea_inventarios.search([('codigo', '=', codigo_de_producto)])
+        inventario_linea_inventario = inventario_partner.inventario
 
+        linea_inventario_codigo = linea_inventarios.search([('id', '=', inventario_linea_inventario.id)]).codigo
 
-        if len(inventario) >= 1:
-            linea_inventario.cantidad_contada = cantidad_contada
+        if len(inventario_partner) >= 1:
+            inventario_linea_inventario.cantidad_contada = cantidad_contada
 
             return {
                         "response": "OK",
-                        "inventario_partner": len(inventario),
                         "data": {
                                     "partner": partner.id,
-                                    "codigo": linea_inventario.codigo
+                                    "linea_inventario": inventario_linea_inventario.id,
+                                    "codigo": linea_inventario_codigo
                                 }
                     }
         else:
             return {
-                        "response": "NO",
-                        "inventario_partner": len(inventario),
-                        "data": {
-                                    "partner": partner.id,
-                                    "codigo": linea_inventario.codigo
-                                }
+                        "response": "ERROR"
                     }
 
 #     @http.route('/inventario/inventario/objects/', auth='public')
